@@ -165,7 +165,7 @@ if DEBUG:
 # Configurações CORS
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://mypetm.netlify.app/login"
+    "https://mypetm.netlify.app"
 ]
 
 # Para desenvolvimento, permita todas as origens (remova em produção)
