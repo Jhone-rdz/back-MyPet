@@ -18,8 +18,8 @@ SECRET_KEY = config("SECRET_KEY")
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv())
-
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1', cast=Csv())
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
 
 DATABASES = {
     'default': {
@@ -184,6 +184,10 @@ CORS_ALLOW_HEADERS = [
     'x-requested-with',
 ]
 
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+DEBUG = False
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
