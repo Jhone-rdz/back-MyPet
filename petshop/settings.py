@@ -169,7 +169,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 # Para desenvolvimento, permita todas as origens (remova em produção)
-# CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Permita cookies se necessário
 CORS_ALLOW_CREDENTIALS = True
