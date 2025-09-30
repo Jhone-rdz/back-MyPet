@@ -9,6 +9,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
 from rest_framework.decorators import api_view
 from rest_framework import status
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny
 
 from .models import Cliente, Pet, Servico, Agendamento
 from .serializers import (
@@ -249,6 +251,7 @@ class DashboardViewSet(viewsets.ViewSet):
     
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def login_view(request):
     username = request.data.get('username')
     password = request.data.get('password')
@@ -274,6 +277,7 @@ def login_view(request):
         return Response({'error': 'Credenciais inválidas'}, status=status.HTTP_401_UNAUTHORIZED)
 
 @api_view(['POST'])
+@permission_classes([AllowAny])
 def register_view(request):
     username = request.data.get('username')
     password = request.data.get('password')
